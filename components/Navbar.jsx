@@ -132,7 +132,7 @@ const Navbar = () => {
                   height="35"
                   alt="logo"
                 /> */}
-                <h1 className="uppercase text-textDark font-extrabold text-3xl">DataShark</h1>
+                <h1 className="uppercase text-textDark font-extrabold text-xl">DataShark</h1>
               </motion.a>
               <div
                 onClick={handleNav}

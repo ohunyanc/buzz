@@ -48,6 +48,9 @@ export default async function handler(
             }
         })
 
+        
+        console.log({response: response.data} )
+
         return res.status(200).json({
             data: response.data
         })

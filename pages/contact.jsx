@@ -24,41 +24,44 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
-        const form = {
-            firstname,
-            lastname,
-            email,
-            subject,
-            message
-        }
-
-        const response = await fetch('/api/submit1', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(form)
-        })
-
-        const content = await response.json()
-
-        console.log(content)
-        alert(content.data.tableRange)
-
-        setMessage('')
-        setSubject('')
-        setFirstname('')
-        setLastname('')
-        setEmail('')
-
-        console.log(form)
+    const form = {
+      firstname,
+      lastname,
+      email,
+      subject,
+      message
     }
 
-  
+    const response = await fetch('/api/submit1', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form)
+    })
+
+    const content = await response.json()
+
+    console.log(content)
+    if (content && content.data == true) { 
+      alert(content.data.tableRange) 
+    }
+
+
+    setMessage('')
+    setSubject('')
+    setFirstname('')
+    setLastname('')
+    setEmail('')
+
+    console.log(form)
+  }
+
+
 
   return (
     <div className="w-screen h-auto ">
@@ -120,7 +123,7 @@ const Contact = () => {
         {/* contact form */}
         <div className="bg-textLight p-12 rounded-lg shadow-md my-8">
           <form onSubmit={handleSubmit}>
-            
+
 
             <div className="grid xl:grid-cols-2 xl:gap-10">
               <input
@@ -130,7 +133,7 @@ const Contact = () => {
                 className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
                 placeholder="First Name"
                 required={true}
-                onChange={(e)=> {
+                onChange={(e) => {
                   setFirstname(e.target.value)
                 }}
                 value={firstname}
@@ -143,7 +146,7 @@ const Contact = () => {
                 className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
                 placeholder="Last Name"
                 required={true}
-                onChange={(e)=> {
+                onChange={(e) => {
                   setLastname(e.target.value)
                 }}
                 value={lastname}
@@ -157,7 +160,7 @@ const Contact = () => {
               className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
               placeholder="Email"
               required={true}
-              onChange={(e)=> {
+              onChange={(e) => {
                 setEmail(e.target.value)
               }}
               value={email}
@@ -171,7 +174,7 @@ const Contact = () => {
               className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
               placeholder="Subject"
               required={true}
-              onChange={(e)=> {
+              onChange={(e) => {
                 setSubject(e.target.value)
               }}
               value={subject}
@@ -185,7 +188,7 @@ const Contact = () => {
                 className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
                 placeholder="Your Message"
                 required={true}
-                onChange={(e)=> {
+                onChange={(e) => {
                   setMessage(e.target.value)
                 }}
                 value={message}
@@ -195,13 +198,13 @@ const Contact = () => {
 
             <button type="submit" className="text-white bg-textPurple hover:bg-teal-200 hover:texgr800 focus:ring-4 focus:outline-none focus:ring-teal-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
             >
-              
-                <div className="flex justify-center items-center gap-2">
+
+              <div className="flex justify-center items-center gap-2">
                 <RiMailSendLine size={20} />
                 <p>Send Message</p>
               </div>
-              
-              </button>
+
+            </button>
 
           </form>
         </div>

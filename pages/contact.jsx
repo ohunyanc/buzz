@@ -47,7 +47,7 @@ const Contact = () => {
     const content = await response.json()
 
     console.log(content)
-    if (content && content.data == true) { 
+    if (content && content.data) { 
       alert(content.data.tableRange) 
     }
 

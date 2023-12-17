@@ -30,7 +30,9 @@ const Contact2 = () => {
         const content = await response.json()
 
         console.log(content)
-        alert(content.data.tableRange)
+        if (content && content.data) {
+            alert(content.data.tableRange)
+        }
 
         setMessage('')
         setPhone('')

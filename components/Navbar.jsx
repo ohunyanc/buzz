@@ -19,7 +19,7 @@ const Navbar = () => {
     if (
       router.asPath === "/about" ||
       router.asPath === "/contact" ||
-      router.asPath === "/projects" 
+      router.asPath === "/projects"
     ) {
       setNavBg("transparent");
       setLinkColor("#ecf0f3");
@@ -45,11 +45,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: `${navBg}`}}
+    <div style={{ backgroundColor: `${navBg}` }}
       className={
-         (shadow
-          ? "fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300" 
-          : "fixed w-full h-20 z-[100]" )
+        (shadow
+          ? "fixed w-full h-20 shadow-xl z-[100] ease-in-out duration-300 px-4"
+          : "fixed w-full h-20 z-[100] px-4")
       }
     >
       <motion.div
@@ -68,12 +68,12 @@ const Navbar = () => {
           <h1 className="uppercase text-textDark font-extrabold sm:text2xl text-4xl">DataShark</h1>
         </motion.a>
         <div>
-          <ul style={{color: `${linkColor}`}} className="hidden md:flex uppercase">
+          <ul style={{ color: `${linkColor}` }} className="hidden md:flex uppercase">
             <Link href="/about">
               <motion.li
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.1 }}
+                transition={{ duration: 0.6 }}
                 className="ml-10 text-xl font-semibold hover:border-b"
               >
                 About Us
@@ -83,7 +83,7 @@ const Navbar = () => {
               <motion.li
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.7 }}
                 className="ml-10 text-xl font-semibold hover:border-b"
               >
                 Contact
@@ -93,7 +93,7 @@ const Navbar = () => {
               <motion.li
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.8 }}
                 className="ml-10 text-xl font-semibold hover:border-b"
               >
                 Product
@@ -119,21 +119,20 @@ const Navbar = () => {
           }
         >
           <div>
-            <div className="flex w-full items-center justify-between">
-              <motion.a
-                initial={{ x: 20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.1 }}
-                href="/"
-              >
+            <div className="flex w-full items-center justify-between"
+            >
+              <Link href="/">
                 {/* <Image
                   src="/assets/navLogo.png"
                   width="87"
                   height="35"
                   alt="logo"
                 /> */}
-                <h1 className="uppercase text-textDark font-extrabold text-xl">DataShark</h1>
-              </motion.a>
+                <motion.h1 className="uppercase text-textDark font-extrabold text-xl"
+                  initial={{ opacity: 0 }}
+                  animate={{  opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}>DataShark</motion.h1>
+              </Link>
               <div
                 onClick={handleNav}
                 className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer "
@@ -143,8 +142,8 @@ const Navbar = () => {
             </div>
             <div className="border-b border-gray-300 my-4">
               <motion.p
-                initial={{ y: 10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                initial={{  opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className="w-[85%] md:w-[90%] py-2"
               >
@@ -152,13 +151,17 @@ const Navbar = () => {
               </motion.p>
             </div>
           </div>
-          <div className="py-4 flex flex-col">
+          <motion.div className="py-4 flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2, delay: 0.5, ease: "easeIn" }}
+          >
             <ul className="uppercase text-[#94a3b8]">
               <Link href="/about">
                 <motion.li
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.2, delay: 0.1, ease: "easeIn" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2, delay: 0.7, ease: "easeIn" }}
                   onClick={() => setNav(false)}
                   className="py-2 px-0 sm:py-0 sm:px-2 sm:text-4xl font-extrabold"
                 >
@@ -168,9 +171,9 @@ const Navbar = () => {
 
               <Link href="/projects">
                 <motion.li
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.2, delay: 0.2, ease: "easeIn" }}
+                  initial={{  opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2, delay: 0.8, ease: "easeIn" }}
                   onClick={() => setNav(false)}
                   className="py-2 px-0 sm:py-0 sm:px-2 sm:text-4xl font-extrabold"
                 >
@@ -179,9 +182,9 @@ const Navbar = () => {
               </Link>
               <Link href="/contact">
                 <motion.li
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.2, delay: 0.3, ease: "easeIn" }}
+                  initial={{ opacity: 0 }}
+                  animate={{  opacity: 1 }}
+                  transition={{ duration: 0.2, delay: 0.9, ease: "easeIn" }}
                   onClick={() => setNav(false)}
                   className="py-2 px-0 sm:py-0 sm:px-2 sm:text-4xl font-extrabold"
                 >
@@ -208,7 +211,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

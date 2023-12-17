@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion": "^10.16.4",
+    "dayjs": "^1.11.10",
+    "framer-motion": "^10.16.16",
+    "google-spreadsheet": "^4.1.1",
+    "googleapis": "^129.0.0",
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@types/node": "20.10.4",
+    "@types/react": "18.2.45",
     "autoprefixer": "^10.0.1",
     "daisyui": "^4.4.17",
     "eslint": "^8",

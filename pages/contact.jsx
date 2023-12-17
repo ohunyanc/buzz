@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BsTelephoneFill } from "react-icons/bs";
 import { HiLocationMarker } from "react-icons/hi";
+import { FcApproval } from 'react-icons/fc';
 import { GrMail } from "react-icons/gr";
+
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { RiMailSendLine } from 'react-icons/ri';
 import Image from "next/image";
 import mess from "@/public/assets/message.jpg";
+import dayjs from 'dayjs';
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -11,8 +16,58 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa6";
+// import { GoogleSpreadsheet } from "google-spreadsheet";
+
+// // Config variables
+// const SPREADSHEET_ID = process.env.NEXT_PUBLIC_SPREADSHEET_ID;
+// const SHEET_ID = process.env.NEXT_PUBLIC_SHEET_ID;
+// const GOOGLE_CLIENT_EMAIL = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL;
+// const GOOGLE_SERVICE_PRIVATE_KEY = process.env.NEXT_PUBLIC_GOOGLE_SERVICE_PRIVATE_KEY;
 
 const Contact = () => {
+
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const form = {
+            firstname,
+            lastname,
+            email,
+            subject,
+            message
+        }
+
+        const response = await fetch('/api/submit1', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form)
+        })
+
+        const content = await response.json()
+
+        console.log(content)
+        alert(content.data.tableRange)
+
+        setMessage('')
+        setSubject('')
+        setFirstname('')
+        setLastname('')
+        setEmail('')
+
+        console.log(form)
+    }
+
+  
+
   return (
     <div className="w-screen h-auto ">
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -23,6 +78,7 @@ const Contact = () => {
           objectFit="cover"
           src={mess}
           alt=""
+          priority
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
           <h2 className="py-4 text-4xl font-extrabold">Contact Us</h2>
@@ -70,58 +126,91 @@ const Contact = () => {
         </div>
 
         {/* contact form */}
-        <div className="bg-textLight p-14 rounded-lg shadow-md my-8">
-          <form>
+        <div className="bg-textLight p-12 rounded-lg shadow-md my-8">
+          <form onSubmit={handleSubmit}>
+            
+
             <div className="grid xl:grid-cols-2 xl:gap-10">
               <input
                 type="text"
-                name="first_name"
-                id="first_name"
+                name="firstname"
+                id="firstname"
                 className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
                 placeholder="First Name"
                 required={true}
-              
+                onChange={(e)=> {
+                  setFirstname(e.target.value)
+                }}
+                value={firstname}
+
               />
               <input
                 type="text"
-                name="last_name"
-                id="last_name"
+                name="lastname"
+                id="lastname"
                 className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
                 placeholder="Last Name"
                 required={true}
-              
+                onChange={(e)=> {
+                  setLastname(e.target.value)
+                }}
+                value={lastname}
               />
             </div>
+
             <input
-                type="email"
-                name="email"
-                id="email"
-                className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
-                placeholder="Email"
-                required={true}
-              
-              />
-              <input
-                type="text"
-                name="subject"
-                id="subject"
-                className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
-                placeholder="Subject"
-                required={true}
-              
-              />
-              <div className="flex justify-center">
+              type="email"
+              name="email"
+              id="email"
+              className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
+              placeholder="Email"
+              required={true}
+              onChange={(e)=> {
+                setEmail(e.target.value)
+              }}
+              value={email}
+
+            />
+
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
+              placeholder="Subject"
+              required={true}
+              onChange={(e)=> {
+                setSubject(e.target.value)
+              }}
+              value={subject}
+
+            />
+            <div className="flex justify-center">
               <textarea
                 rows={3}
+                name="message"
                 id="text_area"
                 className="form-control block w-full px-3 py-2 mb-5 text-base font-normal text-textDark bg-textLight bg-clip-padding border border-solid border-textDark rounded-md transition ease-in-out m-0 focus:text-white focus:bg-textPurple focus:border-white focus:outline-none "
                 placeholder="Your Message"
                 required={true}
-              
+                onChange={(e)=> {
+                  setMessage(e.target.value)
+                }}
+                value={message}
+
               ></textarea>
-              </div>
-              <button type="submit" className="text-white bg-textPurple hover:bg-teal-200 hover:texgr800 focus:ring-4 focus:outline-none focus:ring-teal-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Send Message</button>
+            </div>
+
+            <button type="submit" className="text-white bg-textPurple hover:bg-teal-200 hover:texgr800 focus:ring-4 focus:outline-none focus:ring-teal-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            >
               
+                <div className="flex justify-center items-center gap-2">
+                <RiMailSendLine size={20} />
+                <p>Send Message</p>
+              </div>
+              
+              </button>
+
           </form>
         </div>
       </div>

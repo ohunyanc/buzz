@@ -19,9 +19,9 @@ const Features = () => {
           }
       }}
       viewport={{ once: true }}>Business Services</motion.h1>
-      <div className='w-auto flex h-[100%] md:flex-row sm:flex-col gap-8 p-12 items-center justify-between'>
-        <motion.div className="card card-compact w-96 basis-1/3 bg-textDark shadow-xl"
-          initial={{ opacity: 0, x: 30 }}
+      <div className='w-auto flex h-[100%] md:flex-row sm:flex-col sm:flex-col-1 gap-8 p-12 items-center justify-between'>
+        <motion.div className="card card-compact w-76 basis-1/3 bg-textDark shadow-xl"
+          initial={{ opacity: 0, x: 10 }}
           whileInView={{
               opacity: 1,
               y: 0,
@@ -40,8 +40,8 @@ const Features = () => {
             </div> */}
           </div>
         </motion.div>
-        <motion.div className="card card-compact w-96 basis-1/3 bg-textDark shadow-xl"
-          initial={{ opacity: 0, x: 30 }}
+        <motion.div className="card card-compact w-76 basis-1/3 bg-textDark shadow-xl"
+          initial={{ opacity: 0, x: 10 }}
           whileInView={{
               opacity: 1,
               y: 0,
@@ -60,8 +60,8 @@ const Features = () => {
             </div> */}
           </div>
         </motion.div>
-        <motion.div className="card card-compact w-96 basis-1/3 bg-textDark shadow-xl"
-          initial={{ opacity: 0, x: 30 }}
+        <motion.div className="card card-compact w-76 basis-1/3 bg-textDark shadow-xl"
+          initial={{ opacity: 0, x: 10 }}
           whileInView={{
               opacity: 1,
               y: 0,

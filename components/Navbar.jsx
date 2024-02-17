@@ -131,7 +131,7 @@ const Navbar = () => {
                 <motion.h1 className="uppercase text-textDark font-extrabold text-xl"
                   initial={{ opacity: 0 }}
                   animate={{  opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}>DataShark</motion.h1>
+                  transition={{ duration: 0.5, delay: 0.5 }}>Logo</motion.h1>
               </Link>
               <div
                 onClick={handleNav}

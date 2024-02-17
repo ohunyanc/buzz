@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-wrap">
 
         <div className="w-full md:w-1/4 md:text-start sm:text-center">
-            <h5 className="uppercase mb-6  sm:text-2xl text-5xl text-textDark font-extrabold">DataShark</h5>
+            <h5 className="uppercase mb-6  sm:text-2xl text-5xl text-textDark font-extrabold">Logo</h5>
             <ul className="mb-4">
               <li className="mt-2  mb-4 tracking-tight">
                 

@@ -65,7 +65,7 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
         >
           {/* <Image src="/assets/navLogo.png" alt="" width="125" height="50" /> */}
-          <h1 className="uppercase text-textDark font-extrabold sm:text2xl text-4xl">DataShark</h1>
+          <h1 className="uppercase text-textDark font-extrabold sm:text2xl text-4xl">Logo</h1>
         </motion.a>
         <div>
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex uppercase">
@@ -89,7 +89,7 @@ const Navbar = () => {
                 Contact
               </motion.li>
             </Link>
-            <Link href="/projects">
+            <Link href="/product">
               <motion.li
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}

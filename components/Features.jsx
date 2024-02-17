@@ -9,64 +9,72 @@ const Features = () => {
   return (
     <div>
       <motion.h1 className="py-8 text-center justify-center text-textDark text-5xl font-extrabold"
-      initial={{  opacity: 0 }}
-      animate={{  opacity: 1 }}
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}>Business Services</motion.h1>
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+              delay: 0.3,
+              duration: 0.5,
+          }
+      }}
+      viewport={{ once: true }}>Business Services</motion.h1>
       <div className='w-auto flex h-[100%] md:flex-row sm:flex-col gap-8 p-12 items-center justify-between'>
         <motion.div className="card card-compact w-96 basis-1/3 bg-textDark shadow-xl"
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}>
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                  delay: 0.9,
+                  duration: 1.0,
+              }
+          }}
+          viewport={{ once: true }}>
           <figure><Image src={dribble1} alt="Shoes" /></figure>
           <div className="card-body">
-            <motion.h2 className="card-title" initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}>Business Modeling, Consumer Culture and Habits...</motion.h2>
-            <motion.p initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.7 }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam dolore architecto, nihil natus libero vero!</motion.p>
+            <h2 className="card-title" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repudiandae est dolor, asperiores consequuntur iusto!</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam dolore architecto, nihil natus libero vero!</p>
             {/* <div className="card-actions justify-end">
               <button className="btn btn-primary">Buy Now</button>
             </div> */}
           </div>
         </motion.div>
         <motion.div className="card card-compact w-96 basis-1/3 bg-textDark shadow-xl"
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.7 }}>
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                  delay: 1.0,
+                  duration: 1.0,
+              }
+          }}
+          viewport={{ once: true }}>
           <figure><Image src={dribble2} alt="img" /></figure>
           <div className="card-body">
-            <motion.h2 className="card-title" initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.7 }}>Explore...Tech and Society</motion.h2>
-            <motion.p initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, eos. Eius dignissimos id veritatis facilis?</motion.p>
+            <h2 className="card-title">Explore...Tech and Society</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, eos. Eius dignissimos id veritatis facilis?</p>
             {/* <div className="card-actions justify-end">
               <button className="btn btn-primary">Buy Now</button>
             </div> */}
           </div>
         </motion.div>
         <motion.div className="card card-compact w-96 basis-1/3 bg-textDark shadow-xl"
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }} 
-          whileInView="visible"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                  delay: 1.1,
+                  duration: 1.0,
+              }
+          }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.9 }}>
-          <figure><Image src={dribble3} alt="img" /></figure>
+          ><figure><Image src={dribble3} alt="img" /></figure>
           <div className="card-body">
-            <motion.h2 className="card-title" initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}>Tech Exploration and Development</motion.h2>
-            <motion.p initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.9 }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quos. Praesentium cumque soluta nisi adipisci accusantium odio! Eius, eligendi maxime.</motion.p>
+            <h2 className="card-title">Tech Exploration and Development</h2>
+            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quos. Praesentium cumque soluta nisi adipisci accusantium odio! Eius, eligendi maxime.</p>
             {/* <div className="card-actions justify-end">
               <button className="btn btn-primary">Buy Now</button>
             </div> */}

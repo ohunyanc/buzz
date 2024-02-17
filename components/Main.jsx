@@ -14,19 +14,18 @@ const Main = () => {
           <motion.p initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }} className="uppercase text-sm tracking-widest text-gray-600 py-6">
-            Build Products, Track Analytics with Distinct And Futuristic
-            Outlook
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro modi corrupti, quis incidunt sequi nihil dolorem autem accusamus, corporis voluptatem dolorum itaque optio sapiente distinctio.
           </motion.p>
           <motion.h1 initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.7 }} className="py-2 to-gray-700">
-            welcome to <span className="text-textDark uppercase sm:text-4xl text-5xl font-extrabold">DataShark</span>
+            Lorem, ipsum. <span className="text-textDark uppercase sm:text-4xl text-5xl font-extrabold">Lorem.</span>
           </motion.h1>
           <motion.h1 initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }} className="py-2 text-gray-700">
             {" "}
-            Research & Development Services
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           </motion.h1>
           <motion.p initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

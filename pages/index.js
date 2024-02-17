@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <Head>
-        <title>Business Intelligence | Sequencing Data & Technical Analysis</title>
+        <title>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, dignissimos!</title>
         <meta name="description" content="I’m a front-end web developer specializing in building (and occasionally designing) exceptional digital experiences." />
         <link rel="icon" href="/fav.png" />
       </Head>

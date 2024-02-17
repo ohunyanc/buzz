@@ -194,14 +194,15 @@ const Contact = () => {
                 value={message}
 
               ></textarea>
+              
             </div>
 
-            <button type="submit" className="text-white bg-textPurple hover:bg-teal-200 hover:texgr800 focus:ring-4 focus:outline-none focus:ring-teal-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            <button type="submit" className="text-white group w-full bg-textLight hover:bg-teal-200 hover:text-gray-800 focus:ring-4 focus:outline-none focus:ring-teal-400 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center"
             >
 
-              <div className="flex justify-center items-center gap-2">
-                <RiMailSendLine size={20} />
+              <div className="flex  items-center justify-center gap-2">
                 <p>Send Message</p>
+                <RiMailSendLine size={20} />
               </div>
 
             </button>

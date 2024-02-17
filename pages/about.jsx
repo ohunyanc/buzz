@@ -18,7 +18,7 @@ const About = () => {
             <motion.p className="mb-5 tracking-tighter"
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.7 }}>Information Technology <span className='text-xl font-extrabold'>R & D</span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam dolore</motion.p>
+            transition={{ duration: 0.5, delay: 0.7 }}>Information Technology <span className='text-xl font-extrabold'>R & D</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam dolore</motion.p>
             <motion.p className="mb-0 tracking-tighter" initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam dolore, Lorem ipsum dolor</motion.p>

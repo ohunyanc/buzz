@@ -169,7 +169,7 @@ const Navbar = () => {
                 </motion.li>
               </Link>
 
-              <Link href="/projects">
+              <Link href="/product">
                 <motion.li
                   initial={{  opacity: 0 }}
                   animate={{ opacity: 1 }}

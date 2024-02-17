@@ -9,12 +9,12 @@ const Features = () => {
   return (
     <div>
       <motion.h1 className="py-8 text-center justify-center text-textDark text-5xl font-extrabold"
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, x: 10 }}
       whileInView={{
           opacity: 1,
           y: 0,
           transition: {
-              delay: 0.3,
+              delay: 0.6,
               duration: 0.5,
           }
       }}
@@ -26,7 +26,7 @@ const Features = () => {
               opacity: 1,
               y: 0,
               transition: {
-                  delay: 0.9,
+                  delay: 0.7,
                   duration: 1.0,
               }
           }}
@@ -46,7 +46,7 @@ const Features = () => {
               opacity: 1,
               y: 0,
               transition: {
-                  delay: 1.0,
+                  delay: 0.8,
                   duration: 1.0,
               }
           }}
@@ -66,7 +66,7 @@ const Features = () => {
               opacity: 1,
               y: 0,
               transition: {
-                  delay: 1.1,
+                  delay: 0.9,
                   duration: 1.0,
               }
           }}

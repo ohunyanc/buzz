@@ -67,7 +67,7 @@ export default function Login() {
 
             <section className="w-3/4 mx-auto flex flex-col gap-10">
                 <div className="title">
-                    <Link href={"/"}><h1 className="text-gray-600 text-4xl font-bold py-4 cursor-pointer">Logo</h1></Link>
+                    <Link href={"/"}><h1 className="text-gray-600 text-4xl font-bold py-4 cursor-pointer">Home</h1></Link>
                     <p className="w-3/4 mx-auto text-gray-500">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
                 {/* form */}

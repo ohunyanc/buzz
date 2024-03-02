@@ -16,6 +16,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa6";
+import Link from "next/link";
 const Contact = () => {
 
   const [firstname, setFirstname] = useState("");
@@ -76,8 +77,10 @@ const Contact = () => {
           priority
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-          <h2 className="py-4 text-4xl font-extrabold">Contact Us</h2>
-          <h3>Consultation | Cloud, Data Integration & Web Development Services</h3>
+          <Link href={'/'}>
+          <h2 className="py-8 text-5xl font-extrabold">Home</h2>
+          </Link>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fugit accusantium | voluptatum error ad est itaque culpa tempore.</h3>
         </div>
       </div>
       <div className="flex justify-around items-center py-2 md:py-4 mx-10 sm:mx-5 md:flex-row flex-col">

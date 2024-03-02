@@ -34,7 +34,7 @@ export default function Login() {
                     const { token } = await response.json();
                     // Store token in local storage or cookies
                     localStorage.setItem('token', token);
-                    router.push('/product');
+                    router.push('/');
                 } else {
                     console.error('Login failed');
                 }

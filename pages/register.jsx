@@ -35,7 +35,7 @@ export default function Register() {
         await fetch('https://buzzlive.vercel.app/api/auth/register',options)
             .then(res => res.json())
         .then((data) => {
-            if (data) router.push('https://buzzlive.vercel.app/product');
+            if (data) router.push('https://buzzlive.vercel.app');
         })
     }
     return (

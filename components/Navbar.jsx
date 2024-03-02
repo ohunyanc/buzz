@@ -227,10 +227,12 @@ export default function Navbar() {
                 <div className="flex flex-col items-start px-2">
                 {session?.user && (
                   <>
+                    <Link href={'/profile'}>
                     <Stack direction="row" spacing={2}>
 
                       <Avatar src="/broken-image.jpg" className="cursor-pointer border-1 border-green-800" />
                     </Stack>
+                    </Link>
                     {session.user.username && <div className="text-sm font-light text-green-800">{session.user.username}</div>}
                     
                     {session.user.email && <div className="text-sm font-light text-green-800 py-2">{session.user.email}</div>}

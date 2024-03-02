@@ -46,7 +46,7 @@ export default function Login() {
 
     //google handler function
     async function handleGoogleSignin() {
-        signIn('google', { callbackUrl: "hhttps://buzzlive.vercel.app" })
+        signIn('google', { callbackUrl: "https://buzzlive.vercel.app" })
     }
 
     async function handleGithubSignin() {
@@ -86,7 +86,7 @@ export default function Login() {
 
                     {/* login buttons */}
                     <div className="input-button">
-                        <button type="submit" className={styles.button} onClick={() => signIn()}>Login</button>
+                        <button type="submit" className={styles.button} onClick={signIn}>Login</button>
                     </div>
                     <div className="input-button">
                         <button type="button" onClick={handleGoogleSignin} className={styles.button_custom}>Sign In with Google <Image src={"/assets/google.svg"} alt="image" width={20} height={20} /></button>

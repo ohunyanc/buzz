@@ -32,10 +32,10 @@ export default function Register() {
             body:JSON.stringify(values)
         }
 
-        await fetch('http://localhost:3000/api/auth/register',options)
+        await fetch('https://buzzlive.vercel.app/api/auth/register',options)
             .then(res => res.json())
         .then((data) => {
-            if (data) router.push('http://localhost:3000');
+            if (data) router.push('https://buzzlive.vercel.app/login');
         })
     }
     return (

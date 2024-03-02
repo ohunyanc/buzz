@@ -124,7 +124,7 @@ export default function Navbar() {
                   <>
                     <Stack direction="row" spacing={2}>
 
-                      <Avatar src="/broken-image.jpg" className="cursor-pointer" />
+                      <Avatar src="/broken-image.jpg" className="cursor-pointer border-1 border-green-800" />
                     </Stack>
                     {session.user.username && <div className="text-sm font-light text-green-800">{session.user.username}</div>}
                     
@@ -229,7 +229,7 @@ export default function Navbar() {
                   <>
                     <Stack direction="row" spacing={2}>
 
-                      <Avatar src="/broken-image.jpg" className="cursor-pointer" />
+                      <Avatar src="/broken-image.jpg" className="cursor-pointer border-1 border-green-800" />
                     </Stack>
                     {session.user.username && <div className="text-sm font-light text-green-800">{session.user.username}</div>}
                     

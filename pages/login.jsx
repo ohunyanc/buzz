@@ -51,11 +51,11 @@ export default function Login() {
 
     //google handler function
     async function handleGoogleSignin() {
-        signIn('google', { callbackUrl: "http://localhost:3000" })
+        signIn('google', { callbackUrl: "https://buzzlive.vercel.app" })
     }
 
     async function handleGithubSignin() {
-        signIn('github', { callbackUrl: "http://localhost:3000" })
+        signIn('github', { callbackUrl: "https://buzzlive.vercel.app" })
     }
 
     return (

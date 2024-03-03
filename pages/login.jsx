@@ -34,7 +34,7 @@ export default function Login() {
                     const { token } = await response.json();
                     // Store token in local storage or cookies
                     localStorage.setItem('token', token);
-                    router.push('/');
+                    router.push('/product');
                 } else {
                     console.error('Login failed');
                 }
@@ -43,6 +43,14 @@ export default function Login() {
             }
         }
     });
+
+    const handleLogout = () => {
+        // Clear token from local storage or cookies
+        localStorage.removeItem('token');
+        // Redirect to login page or homepage
+        router.push('/');
+    };
+
 
     //google handler function
     async function handleGoogleSignin() {

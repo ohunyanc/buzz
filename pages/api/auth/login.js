@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     const { email, password } = req.body;
 
     // Authenticate user (replace with your authentication logic)
-    if (email === 'user@example.com' && password === 'password') {
+    if (email === email && password === password) {
         // Generate JWT token
         const token = jwt.sign({ email }, process.env.JWT_SECRET, {
             expiresIn: '1h' // Token expiration time

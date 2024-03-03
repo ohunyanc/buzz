@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 
 export default function Login() {
 
+  
     const [show, setShow] = useState(false)
     const router = useRouter()
 
@@ -21,28 +22,35 @@ export default function Login() {
             password: ""
         },
         validate: login_validate,
-        onSubmit: async (values) => {
-            try {
-                const response = await fetch('/api/auth/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(values)
-                });
-                if (response.ok) {
-                    const { token } = await response.json();
-                    // Store token in local storage or cookies
-                    localStorage.setItem('token', token);
-                    router.push('/product');
-                } else {
-                    console.error('Login failed');
-                }
-            } catch (error) {
-                console.error('Error:', error);
+        onSubmit
+    })
+    console.log(formik.errors)
+
+    async function onSubmit(values) {
+        try {
+            const status = await signIn('credentials', {
+                redirect: false,
+                email: values.email,
+                password: values.password,
+                callbackUrl: "/"
+            });
+    
+            if (status?.ok) {
+                router.push(status.url);
+            } else {
+                // Handle authentication error
+                console.error("Authentication failed:", status?.error || "Unknown error");
+                // You might want to display an error message to the user here
             }
+        } catch (error) {
+            console.error("Error:", error);
+            // Handle any unexpected errors
+            // You might want to display an error message to the user here
         }
-    });
+    }
+    
+
+    
 
     const handleLogout = () => {
         // Clear token from local storage or cookies
@@ -94,7 +102,7 @@ export default function Login() {
 
                     {/* login buttons */}
                     <div className="input-button">
-                        <button type="submit" className={styles.button} onClick={signIn}>Login</button>
+                        <button type="submit" className={styles.button} onClick={()=>signIn()}>Login</button>
                     </div>
                     <div className="input-button">
                         <button type="button" onClick={handleGoogleSignin} className={styles.button_custom}>Sign In with Google <Image src={"/assets/google.svg"} alt="image" width={20} height={20} /></button>

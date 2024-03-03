@@ -146,7 +146,6 @@ export default function Navbar() {
               <button
                 type="button"
                 className="text-white bg-emerald-700 hover:bg-gray-200 hover:rounded-lg  hover:text-emerald-600 hover:border hover:border-emerald-600 focus:ring-1 focus:outline-none focus:ring-green-800 font-medium rounded-md text-sm px-4 py-2 uppercase cursor-pointer"
-                onClick={()=>signIn()}
               >
                 Sign in
               </button>
